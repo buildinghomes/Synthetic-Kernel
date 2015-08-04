@@ -1,0 +1,1 @@
+cmd_drivers/firmware/built-in.o :=  rm -f drivers/firmware/built-in.o; /home/dankmemes/android/android_prebuilt_toolchains/arm-linux-androideabi-4.7/bin/arm-linux-androideabi-ar rcsD drivers/firmware/built-in.o

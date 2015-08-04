@@ -1,0 +1,78 @@
+//for touchscreen and key and keypad-backlight
+
+&soc {
+
+i2c@f9927000 {
+		syna-touchscreen@22 {
+			compatible = "synaptics,syna-ts";
+			reg = <0x22>;
+			interrupt-parent = <&msmgpio>;
+			interrupts = <17 0x2>;
+			synaptics,reset-gpio = <&msmgpio 16 0x00>;
+			synaptics,irq-gpio = <&msmgpio 17 0x00>;
+			synaptics,max_y = <148>;
+//			vdd-supply = <&pm8226_l19>;
+//			vcc_i2c-supply = <&pm8226_lvs1>;
+		};
+	};
+
+	gen-vkeys {
+		compatible = "qcom,gen-vkeys";
+		label = "syna-touchscreen";
+		qcom,disp-maxx = <720>;
+		qcom,disp-maxy = <1280>;
+		qcom,panel-maxx = <720>;
+		qcom,panel-maxy = <1380>;
+		qcom,key-codes = <158 102 139>;
+	};
+	
+	gpio_keys {
+			compatible = "gpio-keys";
+			input-name = "gpio-keys";
+	
+			vol_up {
+				label = "volume_up";
+				gpios = <&msmgpio 106 0x1>;
+				linux,input-type = <1>;
+				linux,code = <115>;
+				debounce-interval = <15>;
+				gpio-key,wakeup;
+			};
+			/*ergate*/
+			vol_down {
+				label = "volume_down";
+				gpios = <&msmgpio 107 0x1>;
+				linux,input-type = <1>;
+				linux,code = <114>;
+				debounce-interval = <15>;
+				gpio-key,wakeup;
+			};
+			camera_snapshot{
+				label = "camera_snapshot";
+				gpios = <&msmgpio 109 0x1>;
+				linux,input-type = <1>;
+				linux,code = <0x2fe>;
+				debounce-interval = <15>;
+			};
+		};
+
+};
+&spmi_bus {
+	qcom,pm8226@0 {
+		qcom,leds@a100 {
+			status = "okay";
+			qcom,led_mpp_2 {
+				label = "mpp";
+				linux,name = "button-backlight";
+				linux,default-trigger = "none";
+				qcom,default-state = "off";
+				qcom,max-current = <5>;
+				qcom,current-setting = <5>;
+				qcom,id = <6>;
+				qcom,mode = "manual";
+				qcom,source-sel = <1>;
+				qcom,mode-ctrl = <0x60>;
+			};
+		};
+	};
+};

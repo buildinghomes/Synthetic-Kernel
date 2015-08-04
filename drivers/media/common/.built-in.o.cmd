@@ -1,0 +1,1 @@
+cmd_drivers/media/common/built-in.o :=  /home/dankmemes/android/android_prebuilt_toolchains/arm-linux-androideabi-4.7/bin/arm-linux-androideabi-ld -EL    -r -o drivers/media/common/built-in.o drivers/media/common/tuners/built-in.o 

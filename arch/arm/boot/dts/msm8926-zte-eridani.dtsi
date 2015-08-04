@@ -1,0 +1,31 @@
+/include/ "touch-key-backlight_eridani.dtsi"
+/include/ "msm8226-camera-sensor-zte.dtsi"
+
+&camera_sensor_power_two {
+	status = "ok";
+};
+
+&cci {
+
+	/*disable qcom actuator because it is not used*/
+	qcom,actuator@6e {
+		status = "disabled";
+	};
+	
+	/*enable the true actuator*/
+	actuator_zte0: qcom,actuator@0 {
+		status = "ok";
+	};
+	qcom,camera-flash-lm3642 {
+		zte,low_setting = [06 00 	// torch time, ramp-up time 16ms, ramp-down time 16ms
+	 				      09 28   	// current control, torch current 140.63mA, flash current 843.75mA
+	 					  01 10 	// modify for P892U12@0808 	 				      
+	 				      0A 42];	// enable register, torch mode, strobe pin disabled,modify for P892U12@0808
+		zte,high_setting = [08 57  	// flash time, ramp time 1.024ms, time-out time 800ms
+	 					  09 29   	// current control, torch current 140.63mA, flash current 937.5mA
+	 					  01 10 	// modify for P892U12@0808 	 	 					  
+	 					  0A C3];  	// enable register, flash mode, strobe pin disabled,modify for P892U12@0808
+		status = "ok";
+	};
+
+};

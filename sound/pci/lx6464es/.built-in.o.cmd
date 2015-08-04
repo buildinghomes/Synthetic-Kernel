@@ -1,0 +1,1 @@
+cmd_sound/pci/lx6464es/built-in.o :=  rm -f sound/pci/lx6464es/built-in.o; /home/dankmemes/android/android_prebuilt_toolchains/arm-linux-androideabi-4.7/bin/arm-linux-androideabi-ar rcsD sound/pci/lx6464es/built-in.o

@@ -1,0 +1,1 @@
+cmd_drivers/net/slip/built-in.o :=  /home/dankmemes/android/android_prebuilt_toolchains/arm-linux-androideabi-4.7/bin/arm-linux-androideabi-ld -EL    -r -o drivers/net/slip/built-in.o drivers/net/slip/slip.o drivers/net/slip/slhc.o 

@@ -1,0 +1,1 @@
+cmd_drivers/gpu/msm/built-in.o :=  /home/dankmemes/android/android_prebuilt_toolchains/arm-linux-androideabi-4.7/bin/arm-linux-androideabi-ld -EL    -r -o drivers/gpu/msm/built-in.o drivers/gpu/msm/msm_kgsl_core.o drivers/gpu/msm/msm_adreno.o drivers/gpu/msm/msm_z180.o 

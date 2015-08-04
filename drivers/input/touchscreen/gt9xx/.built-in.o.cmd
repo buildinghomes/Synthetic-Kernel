@@ -1,0 +1,1 @@
+cmd_drivers/input/touchscreen/gt9xx/built-in.o :=  /home/dankmemes/android/android_prebuilt_toolchains/arm-linux-androideabi-4.7/bin/arm-linux-androideabi-ld -EL    -r -o drivers/input/touchscreen/gt9xx/built-in.o drivers/input/touchscreen/gt9xx/gt9xx.o drivers/input/touchscreen/gt9xx/gt9xx_update.o drivers/input/touchscreen/gt9xx/goodix_tool.o 

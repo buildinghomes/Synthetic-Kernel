@@ -1,0 +1,4 @@
+kernel/drivers/platform/msm/qpnp-pwm.ko
+kernel/drivers/platform/msm/qpnp-power-on.ko
+kernel/drivers/platform/msm/qpnp-vibrator.ko
+kernel/drivers/platform/msm/qpnp-revid.ko

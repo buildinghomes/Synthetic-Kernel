@@ -1,0 +1,26 @@
+/include/ "touch-key-backlight_draconis.dtsi"
+/include/ "msm8226-camera-sensor-zte.dtsi"
+
+&camera_sensor_power_two {
+	zte,gpio-set-tbl-delay = <0 0 0 0>;
+	status = "disabled";
+};
+&cci {
+
+	/*disable qcom actuator because it is not used*/
+	qcom,actuator@6e {
+		status = "disabled";
+	};
+	
+	/*enable the true actuator*/
+	actuator_zte1: qcom,actuator@1 {
+		status = "ok";
+	};
+	
+	/*enable the true flash*/
+	qcom,camera-flash-lm3642 {
+		status = "ok";
+	};
+};
+
+

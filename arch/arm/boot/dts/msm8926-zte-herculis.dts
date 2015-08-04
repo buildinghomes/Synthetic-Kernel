@@ -1,0 +1,50 @@
+/* Copyright (c) 2013, The Linux Foundation. All rights reserved.
+ *
+ * This program is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License version 2 and
+ * only version 2 as published by the Free Software Foundation.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ */
+
+
+/dts-v1/;
+/include/ "msm8926.dtsi"
+/include/ "msm8226-720p-mtp.dtsi"
+/include/ "msm8226-camera-sensor-mtp.dtsi"
+/include/ "msm8926-zte-herculis.dtsi"
+/include/ "dsi-panel-zte-tianma_hx8394d-5p0-720p-video.dtsi"
+/include/ "dsi-panel-zte-yushun-r61318-cpt-5p0-720p-video.dtsi"
+
+/ {
+	model = "ZTE MSM 8926 HERCULIS";
+	compatible = "qcom,msm8926-mtp", "qcom,msm8926", "qcom,mtp";
+	qcom,board-id = <209 0>;
+};
+&soc {
+	zte_misc {
+		compatible = "zte-misc";
+		ext_ovp_en {
+			label = "ext_ovp_en";
+			gpios = <&msmgpio 12 0x0>;
+		};
+		battery_switch {
+			label = "battery_switch";
+			gpios = <&pm8226_gpios 3 0x0>;
+		};
+	};
+
+};
+
+&pm8226_chg {
+	qcom,battery-switch-support;
+	qcom,ibatterm-ma = <170>;
+	qcom,ext-ovp-present;
+};
+
+&pm8226_bms {
+	qcom,chg-term-ua = <170000>;
+};

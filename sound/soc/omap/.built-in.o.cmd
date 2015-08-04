@@ -1,0 +1,1 @@
+cmd_sound/soc/omap/built-in.o :=  rm -f sound/soc/omap/built-in.o; /home/dankmemes/android/android_prebuilt_toolchains/arm-linux-androideabi-4.7/bin/arm-linux-androideabi-ar rcsD sound/soc/omap/built-in.o

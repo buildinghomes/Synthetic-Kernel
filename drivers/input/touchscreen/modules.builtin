@@ -1,0 +1,11 @@
+kernel/drivers/input/touchscreen/atmel_mxt_ts.ko
+kernel/drivers/input/touchscreen/gen_vkeys.ko
+kernel/drivers/input/touchscreen/gen_vkeys_zte.ko
+kernel/drivers/input/touchscreen/ft5x06_ts.ko
+kernel/drivers/input/touchscreen/synaptics_dsx_i2c.ko
+kernel/drivers/input/touchscreen/synaptics_dsx_rmi_dev.ko
+kernel/drivers/input/touchscreen/synaptics_dsx_fw_update.ko
+kernel/drivers/input/touchscreen/synaptics_dsx_test_reporting.ko
+kernel/drivers/input/touchscreen/gt9xx/gt9xx.ko
+kernel/drivers/input/touchscreen/gt9xx/gt9xx_update.ko
+kernel/drivers/input/touchscreen/gt9xx/goodix_tool.ko

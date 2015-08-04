@@ -1,0 +1,63 @@
+/* Copyright (c) 2013, The Linux Foundation. All rights reserved.
+ *
+ * This program is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License version 2 and
+ * only version 2 as published by the Free Software Foundation.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ */
+
+
+/dts-v1/;
+/include/ "msm8926.dtsi"
+/include/ "msm8226-720p-mtp.dtsi"
+/include/ "msm8226-camera-sensor-mtp.dtsi"
+/include/ "msm8926-zte-rf360.dtsi"
+/include/ "dsi-panel-orise1283a-boe-5p7-720p-video-zte-100.dtsi"
+/include/ "dsi-panel-orise1283a-cpt-5p7-720p-video-zte-101.dtsi"
+/include/ "dsi-panel-orise1283a-auo-5p7-720p-video-zte-103.dtsi"
+
+/ {
+	model = "ZTE MSM 8926 RF360";
+	compatible = "qcom,msm8926-mtp", "qcom,msm8926", "qcom,mtp";
+	qcom,board-id = <208 0>;
+};
+&soc {
+	zte_misc {
+		compatible = "zte-misc";
+		ext_ovp_en {
+			label = "ext_ovp_en";
+			gpios = <&msmgpio 12 0x0>;
+		};
+		battery_switch {
+			label = "battery_switch";
+			gpios = <&pm8226_gpios 3 0x0>;
+		};
+	};
+
+};
+
+&pm8226_chg {
+	qcom,battery-switch-support;
+};
+
+&sdhc_1 {
+	qcom,clk-rates = <400000 25000000 50000000 100000000>;
+};
+
+&sdhc_2 {
+         cd-gpios = <&msmgpio 38 0x0>;
+};
+
+&soc {
+	mdss_dsi0: qcom,mdss_dsi@fd922800 {
+		zte,lcd-5v-enable-gpio = <&msmgpio 33 1>;
+		//qcom,platform-supply-entry1 {
+		//	zte,supply_disabled;
+		//};
+	};
+};
+

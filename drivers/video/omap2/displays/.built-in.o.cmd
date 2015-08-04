@@ -1,0 +1,1 @@
+cmd_drivers/video/omap2/displays/built-in.o :=  rm -f drivers/video/omap2/displays/built-in.o; /home/dankmemes/android/android_prebuilt_toolchains/arm-linux-androideabi-4.7/bin/arm-linux-androideabi-ar rcsD drivers/video/omap2/displays/built-in.o

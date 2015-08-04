@@ -1,0 +1,37 @@
+/* Copyright (c) 2013, The Linux Foundation. All rights reserved.
+ *
+ * This program is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License version 2 and
+ * only version 2 as published by the Free Software Foundation.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ */
+
+
+/dts-v1/;
+/include/ "msm8926.dtsi"
+/include/ "msm8226-720p-mtp.dtsi"
+/include/ "msm8226-camera-sensor-mtp.dtsi"
+/include/ "msm8926-zte-aquilae.dtsi"
+/include/ "dsi-panel-orise1283a-boe-5p7-720p-video-zte-100.dtsi"
+/include/ "dsi-panel-orise1283a-cpt-5p7-720p-video-zte-101.dtsi"
+/include/ "dsi-panel-orise1283a-auo-5p7-720p-video-zte-103.dtsi"
+
+/ {
+	model = "ZTE MSM 8926 AQUILAE";
+	compatible = "qcom,msm8926-mtp", "qcom,msm8926", "qcom,mtp";
+	qcom,board-id = <201 0>;
+};
+&soc {
+	zte_misc {
+		compatible = "zte-misc";
+		ext_ovp_en {
+			label = "ext_ovp_en";
+			gpios = <&msmgpio 12 0x0>;
+		};
+	};
+
+};

@@ -1,0 +1,94 @@
+/* Copyright (c) 2013, The Linux Foundation. All rights reserved.
+ *
+ * This program is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License version 2 and
+ * only version 2 as published by the Free Software Foundation.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ */
+
+
+/dts-v1/;
+/include/ "msm8926.dtsi"
+/include/ "msm8226-720p-mtp.dtsi"
+/include/ "msm8226-camera-sensor-mtp.dtsi"
+/include/ "msm8926-zte-gruis.dtsi"
+/include/ "dsi-panel-orise9608a-boe-4p5-qhd-video-zte-400.dtsi"
+/include/ "dsi-panel-nt35516-tm-4p5-qhd-video-zte-401.dtsi"
+/include/ "dsi-panel-zte-tm-otm8018-wvga-video.dtsi"
+/include/ "dsi-panel-zte-hsd-nt35512-wvga-video.dtsi"
+
+/ {
+	model = "ZTE MSM 8926 GRUIS";
+	compatible = "qcom,msm8926-mtp", "qcom,msm8926", "qcom,mtp";
+	qcom,board-id = <207 0>;
+};
+&soc {
+	zte_misc {
+		compatible = "zte-misc";
+		ext_ovp_en {
+			label = "ext_ovp_en";
+			gpios = <&msmgpio 12 0x0>;
+		};
+	};
+
+};
+&pm8226_chg {
+	qcom,ext-ovp-present;
+	qcom,ibatmax-ma = <1100>;
+};
+
+&spmi_bus {
+	qcom,pm8226@0 {
+		qcom,leds@a300 {
+			status = "okay";
+			qcom,led_mpp_4 {
+				label = "mpp";
+				linux,name = "green";
+				linux,default-trigger = "battery-full";
+				qcom,default-state = "off";
+				qcom,max-current = <40>;
+				qcom,current-setting = <5>;
+				qcom,id = <6>;
+				qcom,mode = "pwm";
+				qcom,pwm-us = <1000>;
+				qcom,source-sel = <8>;
+				qcom,mode-ctrl = <0x60>;
+				qcom,pwm-channel = <0>;
+				qcom,start-idx = <1>;
+				qcom,ramp-step-ms = <1>;
+				qcom,duty-pcts = [00 10 20 30];
+				qcom,pause-lo = <1250>;/*for P892A12 period=3s blink=.5s*/
+				qcom,pause-hi = <250>;
+				qcom,use-blink;
+			};
+		};
+
+		qcom,leds@a500 {
+			status = "okay";
+			qcom,led_mpp_6 {
+				label = "mpp";
+				linux,name = "red";
+				linux,default-trigger = "battery-charging";
+				qcom,default-state = "off";
+				qcom,max-current = <40>;
+				qcom,current-setting = <5>;
+				qcom,id = <6>;
+				qcom,mode = "pwm";
+				qcom,pwm-us = <1000>;
+				qcom,mode-ctrl = <0x60>;
+				qcom,source-sel = <10>;
+				qcom,pwm-channel = <5>;
+				qcom,start-idx = <1>;
+				qcom,ramp-step-ms = <1>;
+				qcom,duty-pcts = [00 10 20 30];
+				qcom,pause-lo = <1250>;
+				qcom,pause-hi = <250>;
+				qcom,use-blink;
+			};
+		};
+	};
+};

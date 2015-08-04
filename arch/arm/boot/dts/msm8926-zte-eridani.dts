@@ -1,0 +1,43 @@
+/* Copyright (c) 2013, The Linux Foundation. All rights reserved.
+ *
+ * This program is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License version 2 and
+ * only version 2 as published by the Free Software Foundation.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ */
+
+
+/dts-v1/;
+/include/ "msm8926.dtsi"
+/include/ "msm8226-720p-mtp.dtsi"
+/include/ "msm8226-camera-sensor-mtp.dtsi"
+/include/ "msm8926-zte-eridani.dtsi"
+/include/ "dsi-panel-zte-lead-hsd-otm9608-qhd-video.dtsi"
+/include/ "dsi-panel-zte-yushun-lg-nt35516-qhd-video.dtsi"
+/include/ "dsi-panel-zte-lead-hsd-otm9608-qhd-cmd.dtsi"
+/include/ "dsi-panel-zte-yushun-lg-nt35516-qhd-cmd.dtsi"
+/include/ "dsi-panel-zte-yushun-lg-nt35517-qhd-video.dtsi"  //added by tang in 8/19/2014 for P892U12.
+
+/ {
+	model = "ZTE MSM 8926 ERIDANI";
+	compatible = "qcom,msm8926-mtp", "qcom,msm8926", "qcom,mtp";
+	qcom,board-id = <206 0>;
+};
+&soc {
+	zte_misc {
+		compatible = "zte-misc";
+		ext_ovp_en {
+			label = "ext_ovp_en";
+			gpios = <&msmgpio 12 0x0>;
+		};
+	};
+
+};
+&pm8226_chg {
+	qcom,ext-ovp-present;
+	qcom,ibatmax-ma = <1100>;
+};

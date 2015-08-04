@@ -1,0 +1,1 @@
+cmd_drivers/iommu/built-in.o :=  /home/dankmemes/android/android_prebuilt_toolchains/arm-linux-androideabi-4.7/bin/arm-linux-androideabi-ld -EL    -r -o drivers/iommu/built-in.o drivers/iommu/iommu.o drivers/iommu/msm_iommu.o drivers/iommu/msm_iommu-v1.o drivers/iommu/msm_iommu_dev-v1.o drivers/iommu/msm_iommu_pagetable.o drivers/iommu/msm_iommu_sec.o 

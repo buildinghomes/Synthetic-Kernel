@@ -1,0 +1,1 @@
+cmd_drivers/staging/zte_ftm/built-in.o :=  /home/dankmemes/android/android_prebuilt_toolchains/arm-linux-androideabi-4.7/bin/arm-linux-androideabi-ld -EL    -r -o drivers/staging/zte_ftm/built-in.o drivers/staging/zte_ftm/ftm.o 

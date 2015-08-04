@@ -1,0 +1,1 @@
+cmd_drivers/mfd/built-in.o :=  /home/dankmemes/android/android_prebuilt_toolchains/arm-linux-androideabi-4.7/bin/arm-linux-androideabi-ld -EL    -r -o drivers/mfd/built-in.o drivers/mfd/mfd-core.o drivers/mfd/wcd9xxx-core.o drivers/mfd/wcd9xxx-irq.o drivers/mfd/wcd9xxx-slimslave.o drivers/mfd/wcd9xxx-core-resource.o 

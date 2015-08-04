@@ -1,0 +1,1 @@
+cmd_drivers/media/video/gspca/gspca_main.o := /home/dankmemes/android/android_prebuilt_toolchains/arm-linux-androideabi-4.7/bin/arm-linux-androideabi-ld -EL    -r -o drivers/media/video/gspca/gspca_main.o drivers/media/video/gspca/gspca.o 

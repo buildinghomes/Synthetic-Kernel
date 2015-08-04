@@ -1,0 +1,1 @@
+cmd_drivers/usb/storage/ums-karma.o := /home/dankmemes/android/android_prebuilt_toolchains/arm-linux-androideabi-4.7/bin/arm-linux-androideabi-ld -EL    -r -o drivers/usb/storage/ums-karma.o drivers/usb/storage/karma.o 

@@ -1,0 +1,1 @@
+cmd_sound/soc/pxa/built-in.o :=  rm -f sound/soc/pxa/built-in.o; /home/dankmemes/android/android_prebuilt_toolchains/arm-linux-androideabi-4.7/bin/arm-linux-androideabi-ar rcsD sound/soc/pxa/built-in.o

@@ -1,0 +1,1 @@
+cmd_drivers/usb/gadget/g_android.o := /home/dankmemes/android/android_prebuilt_toolchains/arm-linux-androideabi-4.7/bin/arm-linux-androideabi-ld -EL    -r -o drivers/usb/gadget/g_android.o drivers/usb/gadget/android.o 

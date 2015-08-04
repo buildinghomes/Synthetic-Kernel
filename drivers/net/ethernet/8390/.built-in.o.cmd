@@ -1,0 +1,1 @@
+cmd_drivers/net/ethernet/8390/built-in.o :=  rm -f drivers/net/ethernet/8390/built-in.o; /home/dankmemes/android/android_prebuilt_toolchains/arm-linux-androideabi-4.7/bin/arm-linux-androideabi-ar rcsD drivers/net/ethernet/8390/built-in.o

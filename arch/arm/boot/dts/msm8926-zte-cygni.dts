@@ -1,0 +1,72 @@
+/* Copyright (c) 2013, The Linux Foundation. All rights reserved.
+ *
+ * This program is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License version 2 and
+ * only version 2 as published by the Free Software Foundation.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ */
+
+
+/dts-v1/;
+/include/ "msm8926.dtsi"
+/include/ "msm8226-720p-mtp.dtsi"
+/include/ "msm8226-camera-sensor-mtp.dtsi"
+/include/ "msm8926-zte-cygni.dtsi"
+/include/ "dsi-panel-hx8394a-tm-6p0-720p-video-500.dtsi"
+/include/ "dsi-panel-lead_orise1283a-cpt-6p0-720p-video.dtsi"
+
+/ {
+	model = "ZTE MSM 8926 CYGNI";
+	compatible = "qcom,msm8926-mtp", "qcom,msm8926", "qcom,mtp";
+	qcom,board-id = <203 0>;
+};
+&soc {
+	zte_misc {
+		compatible = "zte-misc";
+		ext_ovp_en {
+			label = "ext_ovp_en";
+			gpios = <&msmgpio 12 0x0>;
+		};
+		battery_switch {
+			label = "battery_switch";
+			gpios = <&pm8226_gpios 3 0x0>;
+		};
+	};
+
+};
+
+&pm8226_chg {
+	qcom,battery-switch-support;
+	qcom,ibatterm-ma = <160>;
+};
+&pm8226_bms {
+	qcom,chg-term-ua = <160000>;
+};
+
+&sdhc_2 {
+         cd-gpios = <&msmgpio 38 0x0>;
+};
+
+&soc {
+	mdss_dsi0: qcom,mdss_dsi@fd922800 {			
+		zte,lcd-5v-vsp-enable-gpio = <&msmgpio 23 1>;
+		zte,lcd-5v-vsn-enable-gpio = <&msmgpio 62 1>;
+		//qcom,platform-supply-entry1 {
+		//	zte,supply_disabled;
+		//};
+	};
+};
+
+&spmi_bus {
+	qcom,pm8226@1 {
+		qcom,vibrator@c000 {
+			status = "okay";
+			qcom,vib-timeout-ms = <15000>;
+			qcom,vib-vtg-level-mV = <3000>;/*for P862A11*/
+		};
+	};
+};

@@ -1,0 +1,99 @@
+//for touchscreen and key and keypad-backlight
+
+&soc {
+
+i2c@f9927000 {
+		syna-touchscreen@22 {
+			compatible = "synaptics,syna-ts";
+			reg = <0x22>;
+			interrupt-parent = <&msmgpio>;
+			interrupts = <17 0x2>;
+			synaptics,reset-gpio = <&msmgpio 16 0x00>;
+			synaptics,irq-gpio = <&msmgpio 17 0x00>;
+			synaptics,max_y = <143>;
+//			vdd-supply = <&pm8226_l19>;
+//			vcc_i2c-supply = <&pm8226_lvs1>;
+		};
+		goodix-touchscreen@14 {
+			compatible = "Goodix-TS";
+			reg = <0x14>;
+			interrupt-parent = <&msmgpio>;
+			interrupts = <17 0x2>;
+			goodix,reset-gpio = <&msmgpio 16 0x00>;
+			goodix,irq-gpio = <&msmgpio 17 0x00>;
+			goodix,i2c-pull-up = <1>;
+		};		
+		focatl@3e{
+            compatible = "foctal,ft-ts";
+            reg = <0x3e>;
+            interrupt-parent = <&msmgpio>;
+            interrupts = <17 0x2>;
+			ft,max_x=<480>;
+			ft,max_y=<800>;
+		};		
+	};
+
+
+	gen-vkeys {
+		compatible = "qcom,gen-vkeys";
+		label = "goodix-touchscreen";
+		qcom,disp-maxx = <480>;
+		qcom,disp-maxy = <800>;
+		qcom,panel-maxx = <480>;
+		qcom,panel-maxy = <1000>;
+		qcom,key-codes = <158 102 139>;
+	};	
+	gen-vkeys1 {
+		compatible = "qcom,gen-vkeys";
+		label = "Fts-touchscreen";
+		qcom,disp-maxx = <480>;
+		qcom,disp-maxy = <800>;
+		qcom,panel-maxx = <480>;
+		qcom,panel-maxy = <1000>;
+		qcom,key-codes = <158 102 139>;
+	};	
+	gpio_keys {
+			compatible = "gpio-keys";
+			input-name = "gpio-keys";
+	
+			vol_up {
+				label = "volume_up";
+				gpios = <&msmgpio 106 0x1>;
+				linux,input-type = <1>;
+				linux,code = <115>;
+				debounce-interval = <15>;
+				gpio-key,wakeup;
+			};
+			/*ergate*/
+			vol_down {
+				label = "volume_down";
+				gpios = <&msmgpio 107 0x1>;
+				linux,input-type = <1>;
+				linux,code = <114>;
+				debounce-interval = <15>;
+				gpio-key,wakeup;
+			};
+
+		};
+
+};
+&spmi_bus {
+	qcom,pm8226@0 {
+		qcom,leds@a100 {
+			status = "okay";
+			qcom,led_mpp_2 {
+				label = "mpp";
+				linux,name = "button-backlight";
+				linux,default-trigger = "none";
+				qcom,default-state = "off";
+				qcom,max-current = <5>;
+				qcom,current-setting = <5>;
+				qcom,id = <6>;
+				qcom,mode = "manual";
+				qcom,source-sel = <1>;
+				qcom,mode-ctrl = <0x60>;
+			};
+		};
+	};
+};
+

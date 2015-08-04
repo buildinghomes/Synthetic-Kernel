@@ -1,0 +1,1 @@
+cmd_lib/reed_solomon/built-in.o :=  /home/dankmemes/android/android_prebuilt_toolchains/arm-linux-androideabi-4.7/bin/arm-linux-androideabi-ld -EL    -r -o lib/reed_solomon/built-in.o lib/reed_solomon/reed_solomon.o 

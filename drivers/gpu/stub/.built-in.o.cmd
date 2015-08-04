@@ -1,0 +1,1 @@
+cmd_drivers/gpu/stub/built-in.o :=  rm -f drivers/gpu/stub/built-in.o; /home/dankmemes/android/android_prebuilt_toolchains/arm-linux-androideabi-4.7/bin/arm-linux-androideabi-ar rcsD drivers/gpu/stub/built-in.o

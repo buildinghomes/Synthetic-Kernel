@@ -1,0 +1,1 @@
+cmd_drivers/block/built-in.o :=  /home/dankmemes/android/android_prebuilt_toolchains/arm-linux-androideabi-4.7/bin/arm-linux-androideabi-ld -EL    -r -o drivers/block/built-in.o drivers/block/brd.o drivers/block/loop.o 

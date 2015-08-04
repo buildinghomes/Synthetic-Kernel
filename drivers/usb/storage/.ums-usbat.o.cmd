@@ -1,0 +1,1 @@
+cmd_drivers/usb/storage/ums-usbat.o := /home/dankmemes/android/android_prebuilt_toolchains/arm-linux-androideabi-4.7/bin/arm-linux-androideabi-ld -EL    -r -o drivers/usb/storage/ums-usbat.o drivers/usb/storage/shuttle_usbat.o 

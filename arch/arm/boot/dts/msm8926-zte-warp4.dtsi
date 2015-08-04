@@ -1,0 +1,28 @@
+/include/ "touch-key-backlight_warp4.dtsi"
+/include/ "msm8226-camera-sensor-zte.dtsi"
+
+&camera_sensor_power_two {
+	zte,gpio-set-tbl-sequence = <2 0 1 7>; //power up sequence
+	zte,gpio-set-tbl-delay = <0 3 0 0>;
+	status = "ok";
+};
+
+&cci {
+
+	/*disable qcom actuator because it is not used*/
+	qcom,actuator@6e {
+		status = "disabled";
+	};
+	
+	/*enable the true actuator*/
+	actuator_zte1: qcom,actuator@1 {
+		status = "ok";
+	};
+	
+	/*enable the true flash*/
+	qcom,camera-flash-lm3642 {
+		status = "ok";
+	};
+};
+
+

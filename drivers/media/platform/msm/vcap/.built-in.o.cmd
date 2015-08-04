@@ -1,0 +1,1 @@
+cmd_drivers/media/platform/msm/vcap/built-in.o :=  rm -f drivers/media/platform/msm/vcap/built-in.o; /home/dankmemes/android/android_prebuilt_toolchains/arm-linux-androideabi-4.7/bin/arm-linux-androideabi-ar rcsD drivers/media/platform/msm/vcap/built-in.o

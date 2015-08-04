@@ -1,0 +1,1 @@
+cmd_drivers/hid/usbhid/built-in.o :=  /home/dankmemes/android/android_prebuilt_toolchains/arm-linux-androideabi-4.7/bin/arm-linux-androideabi-ld -EL    -r -o drivers/hid/usbhid/built-in.o drivers/hid/usbhid/usbhid.o 

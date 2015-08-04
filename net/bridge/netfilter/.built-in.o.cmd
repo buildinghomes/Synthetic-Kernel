@@ -1,0 +1,1 @@
+cmd_net/bridge/netfilter/built-in.o :=  /home/dankmemes/android/android_prebuilt_toolchains/arm-linux-androideabi-4.7/bin/arm-linux-androideabi-ld -EL    -r -o net/bridge/netfilter/built-in.o net/bridge/netfilter/ebtables.o net/bridge/netfilter/ebtable_broute.o 

@@ -1,0 +1,1 @@
+cmd_drivers/mmc/host/built-in.o :=  /home/dankmemes/android/android_prebuilt_toolchains/arm-linux-androideabi-4.7/bin/arm-linux-androideabi-ld -EL    -r -o drivers/mmc/host/built-in.o drivers/mmc/host/sdhci.o drivers/mmc/host/msm_sdcc.o drivers/mmc/host/msm_sdcc_dml.o drivers/mmc/host/sdhci-pltfm.o drivers/mmc/host/sdhci-msm.o 

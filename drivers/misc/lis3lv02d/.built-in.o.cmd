@@ -1,0 +1,1 @@
+cmd_drivers/misc/lis3lv02d/built-in.o :=  rm -f drivers/misc/lis3lv02d/built-in.o; /home/dankmemes/android/android_prebuilt_toolchains/arm-linux-androideabi-4.7/bin/arm-linux-androideabi-ar rcsD drivers/misc/lis3lv02d/built-in.o

@@ -1,0 +1,1 @@
+cmd_net/sched/built-in.o :=  /home/dankmemes/android/android_prebuilt_toolchains/arm-linux-androideabi-4.7/bin/arm-linux-androideabi-ld -EL    -r -o net/sched/built-in.o net/sched/sch_generic.o net/sched/sch_mq.o net/sched/sch_api.o net/sched/sch_blackhole.o net/sched/cls_api.o net/sched/sch_fifo.o net/sched/sch_htb.o net/sched/sch_prio.o net/sched/cls_fw.o 

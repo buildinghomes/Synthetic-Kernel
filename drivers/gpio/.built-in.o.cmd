@@ -1,0 +1,1 @@
+cmd_drivers/gpio/built-in.o :=  /home/dankmemes/android/android_prebuilt_toolchains/arm-linux-androideabi-4.7/bin/arm-linux-androideabi-ld -EL    -r -o drivers/gpio/built-in.o drivers/gpio/gpiolib.o drivers/gpio/devres.o drivers/gpio/gpio-msm-common.o drivers/gpio/gpio-msm-v3.o drivers/gpio/qpnp-pin.o 

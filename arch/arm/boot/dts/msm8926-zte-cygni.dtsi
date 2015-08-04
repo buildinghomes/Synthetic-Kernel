@@ -1,0 +1,76 @@
+/include/ "msm8226-camera-sensor-zte.dtsi"
+/include/ "touch-key-backlight_cygni.dtsi"
+
+&cci {
+
+	/*disable qcom actuator because it is not used*/
+	qcom,actuator@6e {
+		status = "disabled";
+	};
+	
+	/*
+	 * Support for Rohm bu64291
+	 */
+	actuator_zte1: qcom,actuator@1 {
+		cell-index = <3>;
+		reg = <0x1>;
+		qcom,slave-addr = <0x18>;
+		compatible = "qcom,actuator";
+		qcom,cci-master = <0>;
+		qcom,actuator-name = "bu64291";
+		status = "disabled";
+	};
+	
+	
+	/*enable the true actuator*/
+	actuator_zte1: qcom,actuator@1 {
+		status = "ok";
+	};
+	
+	/*enable the true flash*/
+	qcom,camera-flash-lm3642 {
+		status = "ok";
+	};
+	
+	qcom,camera@1 {
+		compatible = "qcom,ov8835";
+		reg = <0x1>;
+		qcom,slave-id = <0x6c 0x300a 0x8830>;
+		qcom,csiphy-sd-index = <0>;
+		qcom,csid-sd-index = <0>;
+		qcom,actuator-src = <&actuator_zte1>;
+		qcom,led-flash-src = <&led_flash_lm3642>;
+		qcom,mount-angle = <90>;
+		qcom,sensor-name = "ov8835";
+		qcom,gpio-no-mux = <0>;
+		gpios = <&msmgpio 26 0>,
+			<&msmgpio 36 0>,
+			<&msmgpio 37 0>,
+			<&msmgpio 67 0>,
+			<&msmgpio 69 0>,
+			<&msmgpio 111 0>,
+			<&msmgpio 112 0>;
+		qcom,gpio-standby = <1>;
+		qcom,gpio-reset = <2>;
+		qcom,gpio-vdig = <3>;
+		qcom,gpio-vana = <4>;
+		qcom,gpio-vio = <5>;
+		qcom,gpio-vaf = <6>;
+		qcom,gpio-req-tbl-num = <0 1 2 3 4 5 6>;
+		qcom,gpio-req-tbl-flags = <1 0 0 0 0 0 0>;
+		qcom,gpio-req-tbl-label = "CAMIF_MCLK",
+			"CAM_STANDBY",
+			"CAM_RESET1",
+			"CAM_VDIG",
+			"CAM_VANA",
+			"CAM_VIO",
+			"CAM_VAF";
+		qcom,csi-lane-assign = <0x4320>;
+		qcom,csi-lane-mask = <0x1f>;
+		qcom,sensor-position = <0>;
+		qcom,sensor-mode = <0>;
+		qcom,sensor-type = <0>;
+		qcom,cci-master = <0>;
+		status = "ok";
+	};
+};

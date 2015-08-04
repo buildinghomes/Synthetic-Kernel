@@ -1,0 +1,4 @@
+kernel/drivers/power/power_supply.ko
+kernel/drivers/power/qpnp-bms.ko
+kernel/drivers/power/qpnp-charger.ko
+kernel/drivers/power/battery_current_limit.ko

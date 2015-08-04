@@ -1,0 +1,1 @@
+cmd_drivers/char/hw_random/rng-core.o := /home/dankmemes/android/android_prebuilt_toolchains/arm-linux-androideabi-4.7/bin/arm-linux-androideabi-ld -EL    -r -o drivers/char/hw_random/rng-core.o drivers/char/hw_random/core.o 
